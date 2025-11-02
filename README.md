@@ -45,8 +45,8 @@ To view this project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/texture-mapping-webgl.git
-cd texture-mapping-webgl
+git clone https://github.com/aliburkemper12/textures-webgl.git
+cd textures-webgl
 
 # Start a simple local HTTP server
 python3 -m http.server
