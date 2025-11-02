@@ -69,10 +69,8 @@ Then open your browser and visit:
 
 **Ali Burkemper**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](YOUR_LINKEDIN_URL)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:YOUR_EMAIL)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)]([YOUR_LINKEDIN_URL](https://www.linkedin.com/in/ali-burkemper/))
 
-**Project Link:** [https://github.com/YOUR_USERNAME/texture-mapping-webgl](https://github.com/YOUR_USERNAME/texture-mapping-webgl)
 
 ---
 
