@@ -34,7 +34,7 @@ Users can **move the camera**, , and **interact with the pictures** on 3D surfac
 
 ## 🖼️ Screenshots  
 
-| View 1 | View 2 | View 3 |
+| Left View | Middle View | Right View |
 |:--:|:--:|:--:|
 | ![Screenshot 1](images/example3.png) | ![Screenshot 2](images/example1.png) | ![Screenshot 3](images/example2.png) |
 
