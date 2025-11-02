@@ -1,5 +1,12 @@
 "use strict";
 
+// Ali Burkemper, CS435, Project 5
+
+// Project to investigate texture mapping in WebGL
+// create a model room (with front wall and ceiling removed) with  textured walls, floor, and a table
+// picture frames on the walls with a dynamic frame on the table that can be interacted with
+
+
 var canvas;
 var gl;
 
@@ -20,8 +27,10 @@ var texCoordsArray = [];
 // camera
 var modelViewMatrixLoc, projectionMatrixLoc;
 var modelViewMatrix, projectionMatrix;
-var eye = vec3(0.0, 0.1, 1.5);
+var eye = vec3(0.0, 0.1, 1.2);
 var at, up;
+
+var convertId;
 
 var flag = true;
 
@@ -41,15 +50,9 @@ var texture10; // family
 var texture11; // frog
 
 
-// images
+// images for electronic frame
 var currentImage = 0;
 
-var images = [
-    "texImage5", // dog
-    "texImage9", // kid
-    "texImage10", // family
-    "texImage11", // frog
-]
 
 
 var texCoord = [
@@ -388,6 +391,13 @@ window.onload = function init() {
     var image11 = document.getElementById("texImage11");
     texture11 = configureTexture(image11, gl.TEXTURE10);
 
+    convertId = {
+        0: texture5,
+        1: texture9,
+        2: texture10,
+        3: texture11
+    }
+
 
     gl.uniform1i(gl.getUniformLocation(program, "uTextureMap"), 0);
 
@@ -405,44 +415,75 @@ window.onload = function init() {
         eye = vec3(1.2, eye[1], eye[2]);
     });
 
-    // // button prev
-    // document.getElementById("prev").addEventListener("click", function() {
-    //     if (flag) { // get prev image
-    //         currentImage--;
-    //         if (currentImage < 0) {
-    //             currentImage = images.length - 1;
-    //         }
-    //         var imgId = images[currentImage];
-    //         gl.activeTexture(gl.TEXTURE4);
-    //         gl.bindTexture(gl.TEXTURE_2D, texture5);
-    //         gl.uniform1i(gl.getUniformLocation(program, "uTextureMap"), 4);
-    //         gl.drawArrays(gl.TRIANGLES, numPositions + numPositions2 + numPositions3 + numPositions4, numPositions5);
-    //     }
-    // });
-    // // button play
-    // document.getElementById("play").addEventListener("click", function() {
-    //     if (flag) { // start
-    //         flag = false;
-    //         //change btn to 'pause'
-    //         document.getElementById("play").innerHTML = "Pause";
+    // button prev
+    document.getElementById("prev").addEventListener("click", function() {
+        if (flag) { // get prev image
+            console.log("prev image");
+            currentImage--;
+            if (currentImage < 0) {
+                currentImage = 3;
+            }
+            console.log(currentImage);
+        }
+    });
 
-    //     }
-    //     else { // stop
-    //         flag = true;
-    //         document.getElementById("play").innerHTML = "Play";
-    //     }
-    // });
-    // // button next
-    // document.getElementById("next").addEventListener("click", function() {
-    //     if (flag) { // get next image
+    var interval = null;
 
-    //     }
-    // });
+    // button play
+    document.getElementById("play").addEventListener("click", function() {
+        console.log("play/pause");
+        if (flag) { // start
+            flag = false;
+            //change btn to 'pause'
+            document.getElementById("play").innerHTML = "Pause";
+
+            // check if interval, delete
+            if (interval) {
+                clearInterval(interval);
+                interval = null;
+            }
+
+            // auto change image every 2 seconds
+            interval = setInterval(function() {
+                if (!flag) { // only change if playing
+                    currentImage++;
+                    if (currentImage > 3) {
+                        currentImage = 0;
+                    }
+                    console.log(currentImage);
+                }
+            }, 2000);
+        }
+        else { // stop
+            flag = true;
+            document.getElementById("play").innerHTML = "Play";
+
+            // check if interval, delete
+            if (interval) {
+                clearInterval(interval);
+                interval = null;
+            }
+        }
+    });
+
+    // button next
+    document.getElementById("next").addEventListener("click", function() {
+        if (flag) { // get next image
+            console.log("prev image");
+            currentImage++; // increment
+            if (currentImage > 3) {
+                currentImage = 0;
+            }
+            console.log(currentImage);
+        }
+    });
 
 
     render();
 
 }
+
+
 
 var render = function() {
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
@@ -481,7 +522,7 @@ var render = function() {
 
     // frame
     gl.activeTexture(gl.TEXTURE4);
-    gl.bindTexture(gl.TEXTURE_2D, texture5);
+    gl.bindTexture(gl.TEXTURE_2D, convertId[currentImage]); // dynamic
     gl.uniform1i(gl.getUniformLocation(program, "uTextureMap"), 4);
     gl.drawArrays(gl.TRIANGLES, numPositions + numPositions2 + numPositions3 + numPositions4, numPositions5);
 
