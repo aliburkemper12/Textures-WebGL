@@ -1,5 +1,4 @@
 <a id="readme-top"></a>
-
 <div align="center">
 
 # 🎨 Texture Mapping in WebGL  
@@ -18,15 +17,15 @@ Users can move the camera around a 3D room and interact with texture-mapped pict
 This project was created for my undergraduate **Computer Graphics** course to explore the fundamentals of **texture mapping** and **interactive 3D rendering**.  
 
 It builds a **virtual room** where each wall features framed images mapped as textures.  
-Users can **move the camera**, , and **interact with the pictures** on 3D surfaces.  
+Users can **move the camera** and **interact with the pictures** on 3D surfaces.  
 
 ---
 
 ## 🕹️ Features  
 
-- 3D environment
+- 3D environment with texture mapping
 - Camera movement 
-- Texture mapping
+- Interactive picture frames
 - Implemented with **Java**, **HTML**, and **WebGL**  
 - Simple local server setup using Python  
 
@@ -37,7 +36,6 @@ Users can **move the camera**, , and **interact with the pictures** on 3D surfac
 | Left View | Middle View | Right View |
 |:--:|:--:|:--:|
 | ![Screenshot 1](images/example3.png) | ![Screenshot 2](images/example1.png) | ![Screenshot 3](images/example2.png) |
-
 
 ---
 
@@ -52,16 +50,30 @@ cd texture-mapping-webgl
 
 # Start a simple local HTTP server
 python3 -m http.server
+```
 
-Then open your browser and visit:
-👉 http://localhost:8000
+Then open your browser and visit:  
+👉 **http://localhost:8000**
 
+---
 
-🧩 Tech Stack
+## 🧩 Tech Stack
 
-Languages: Java, HTML, JavaScript
-Libraries: WebGL
-Tools: Python (for local hosting)
+- **Languages:** Java, HTML, JavaScript
+- **Libraries:** WebGL
+- **Tools:** Python (for local hosting)
 
+---
 
+## 📬 Contact
 
+**Ali Burkemper**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](YOUR_LINKEDIN_URL)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:YOUR_EMAIL)
+
+**Project Link:** [https://github.com/YOUR_USERNAME/texture-mapping-webgl](https://github.com/YOUR_USERNAME/texture-mapping-webgl)
+
+---
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
