@@ -18,15 +18,15 @@ Users can move the camera around a 3D room and interact with texture-mapped pict
 This project was created for my undergraduate **Computer Graphics** course to explore the fundamentals of **texture mapping** and **interactive 3D rendering**.  
 
 It builds a **virtual room** where each wall features framed images mapped as textures.  
-Users can **move the camera**, **rotate the view**, and **explore how WebGL applies and renders textures** on 3D surfaces.  
+Users can **move the camera**, , and **interact with the pictures** on 3D surfaces.  
 
 ---
 
 ## 🕹️ Features  
 
-- Interactive 3D environment  
-- Camera movement and rotation  
-- Multiple texture-mapped picture frames  
+- 3D environment
+- Camera movement 
+- Texture mapping
 - Implemented with **Java**, **HTML**, and **WebGL**  
 - Simple local server setup using Python  
 
@@ -38,7 +38,6 @@ Users can **move the camera**, **rotate the view**, and **explore how WebGL appl
 |:--:|:--:|:--:|
 | ![Screenshot 1](images/screenshot1.png) | ![Screenshot 2](images/screenshot2.png) | ![Screenshot 3](images/screenshot3.png) |
 
-> 📸 Replace the image paths above (`images/screenshotX.png`) with your actual screenshots.
 
 ---
 
